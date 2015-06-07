@@ -82,22 +82,6 @@
       </li>
     
       
-      <li class="menu-item menu-item-categories">
-        <a href="/categories">
-          <i class="menu-item-icon icon-categories"></i> <br />
-          分类
-        </a>
-      </li>
-    
-      
-      <li class="menu-item menu-item-about">
-        <a href="/about">
-          <i class="menu-item-icon icon-about"></i> <br />
-          关于
-        </a>
-      </li>
-    
-      
       <li class="menu-item menu-item-archives">
         <a href="/archives">
           <i class="menu-item-icon icon-archives"></i> <br />
@@ -148,10 +132,6 @@
         </span>
 
         
-
-        
-          
-        
       </div>
     </div>
 
@@ -193,8 +173,30 @@
 
       
       
+
+      
+        <section id="comments">
+          <!--高速版，加载速度快，使用前需测试页面的兼容性-->
+          <div id="SOHUCS" sid="<%= page.title %>"></div>
+          <script>
+            (function(){
+              var appid = 'cyrgGfisJ',
+              conf = '694ae8f132e36e8b31e15a09da3e5487';
+              var doc = document,
+              s = doc.createElement('script'),
+              h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+              s.type = 'text/javascript';
+              s.charset = 'utf-8';
+              s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+              h.insertBefore(s,h.firstChild);
+              window.SCS_NO_IFRAME = true;
+            })()
+          </script>    
+        </section>
+      
     </div>
   </div>
+
 
 
 
@@ -251,10 +253,10 @@
           </div>
 
           <div class="site-state-item site-state-categories">
-            <a href="/categories">
+            
               <span class="site-state-item-count">0</span>
               <span class="site-state-item-name">分类</span>
-              </a>
+              
           </div>
 
           <div class="site-state-item site-state-tags">
