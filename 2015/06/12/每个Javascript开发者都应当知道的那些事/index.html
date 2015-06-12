@@ -128,17 +128,28 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2015-06-08
+          发表于 2015-06-12
         </span>
 
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/技术/">技术</a>
+
+              
+              
+
+            
+          </span>
         
 
         
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/06/08/每个Javascript开发者都应当知道的那些事/#comments" >
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/08/每个Javascript开发者都应当知道的那些事/"></span>
+            <a href="/2015/06/12/每个Javascript开发者都应当知道的那些事/#comments" >
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/12/每个Javascript开发者都应当知道的那些事/"></span>
             </a>
           </span>
           
@@ -153,6 +164,7 @@
 
       
         <h3 id="原生JS获取DOM元素方法">原生JS获取DOM元素方法</h3><p>document.getElementById——通过ID查找元素的经典查询。<br>document.getElementsByClassName——通过className在DOM中查找元素。<br>document.querySelector——这是一个很好的方法。它拥有jQuery $()的所有力量，它是原生的。它将只返回它发现的第一个元素。<br>document.querySelectorAll——几乎和上面的方法一样，除了它返回多个元素，而不仅仅是第一个。<br>document.getElementsByTagName——这允许查询特定标记名的元素。想在页面或span标签中找到所有DIV元素吗？这是你想要的方法。</p>
+<a id="more"></a>
 <h3 id="控制台命令">控制台命令</h3><p>console.log——基本的 logging ，用来记录在我的代码中发生的动作的基本消息。格式化标识符在console调用时也被支持。<br>console.dir(对象)——这个方便的方法可以在你的控制台窗口打印一个Javascript对象的内容。很方便。<br>console.group(标题)——这允许你通过一个可选的标题创建一组的控制台日志记录命令。意思你可以将类似的日志信息分组，比如当一段代码负责一个任务时。<br>console.groupCollapsed——和上述方法完全相同，除了最开始是折叠的，没有打开。<br>console.groupEnd——这允许你结束上面定义的组。<br>console.time(标签)——允许你测量一段特定的Javascript代码运行需要多长时间，以毫秒为单位。对测量可能的瓶颈方法尤其有效。<br>console.timeEnd(标签)——类似于groupEnd方法，这允许你停止计时器记录功能，同时运行时间将在控制台打印出来。<br>copy(字符串)——在Chrome和Firefox控制台有这个方法，它允许你将一个字符串的内容复制到剪贴板。打开开发工具，试试它，它有时可以派上用场。</p>
 <h3 id="处理字符串">处理字符串</h3><p>String.replace(regexp | replaceThis，replaceWith |callback)-允许你用另一个值替换一个值，甚至使用一个正则表达式。<br>String.concat(‘string1’,‘string2’,etc…)-这个方法允许你将一个或多个字符串值连接起来。<br>String.indexOf(value)-这个方法允许你找到指定值第一次出现的位置，如果没有找到返回-1。<br>String.slice(startIndex,endIndex)-这个方法做了它表达的做法。它需要一个开始索引(从零)和一个结束索引，并返回一个新的字符串块。<br>String.split(separator,limit)——这个方法将一个字符串分割成由一个或多个条目组成的数组。<br>String.substr(startIndex,length)-该方法将返回字符串中从startIndex开始到指定长度的字符。<br>String.toLowerCase-这个方法将返回调用字符串的小写。<br>String.toUpperCase-这个方法将返回调用字符串的大写。<br>String.trim-调用字符串开头和结尾的空格将被删除。</p>
 <h3 id="处理数组">处理数组</h3><p>Array.pop-删除数组中的最后一个元素并返回它<br>Array.shift-删除数组中的第一个元素并返回它<br>Array.push(val1,val2…)-在一个数组的尾部添加一个或多个条目。该方法运行后将始终返回新数组长度。你可以指定多个逗号分隔值。<br>Array.reverse-反转数组的顺序(第一个元素成为最后一个同时最后一个成为第一个，等等)。<br>Array.sort([compareFunction])—允许你通过指定一个比较函数进行数组排序，比较函数能访问数组中需要排序的每一个值。<br>Array.join(separator)-这个方法在数组中取一个或多个条目，并返回一个由分隔符连接的字符串值。如果你不指定一个分隔符，缺省值是一个逗号。<br>Array.indexOf(value)-这个方法能得到指定值第一次出现的位置，如果没有找到返回-1。</p>
@@ -174,11 +186,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2015/06/12/Angular中的promise/">Angular JS中的promise</a>
+            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/05/29/使用Sketch生成Webfont/">使用Sketch生成Webfont</a>
+              <a href="/2015/06/12/使用Sketch生成Webfont/">使用Sketch生成Webfont</a>
             
           </div>
         </div>
@@ -244,21 +258,21 @@
         <div class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-count">1</span>
               <span class="site-state-item-name">分类</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -532,9 +546,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'liu-song';
-      var disqus_identifier = '2015/06/08/每个Javascript开发者都应当知道的那些事/';
+      var disqus_identifier = '2015/06/12/每个Javascript开发者都应当知道的那些事/';
       var disqus_title = '每个Javascript开发者都应当知道的那些事';
-      var disqus_url = 'https://github.com/LS1231/2015/06/08/每个Javascript开发者都应当知道的那些事/';
+      var disqus_url = 'https://github.com/LS1231/2015/06/12/每个Javascript开发者都应当知道的那些事/';
 
       (function(){
         var dsq = document.createElement('script');

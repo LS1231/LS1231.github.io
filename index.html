@@ -122,7 +122,106 @@
           
           
             
-              <a class="post-title-link" href="/2015/06/08/每个Javascript开发者都应当知道的那些事/">
+              <a class="post-title-link" href="/2015/06/12/Angular中的promise/">
+                Angular JS中的promise
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-06-12
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/技术/">技术</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/06/12/Angular中的promise/#comments" >
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/12/Angular中的promise/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h3 id="如何创建一个promise">如何创建一个promise</h3><p>想要在Angular中创建promise,可以使用内置的$q服务。$q服务在它的deferred API中提供了一些方法。</p>
+<p>首先,需要把$q服务注入到想要使用它的对象中。</p>
+<pre><code>angular.module(<span class="string">'myApp'</span>, []) 
+    .factory(<span class="string">'GithubService'</span>, [<span class="string">'$q'</span>, <span class="function"><span class="keyword">function</span><span class="params">(<span class="variable">$q</span>)</span> </span>{ 
+      <span class="comment">// 现在就可以访问到$q库了</span>
+    }]);
+</code></pre><p>要创建一个deferred对象,可以调用defer()方法:</p>
+<pre><code><span class="keyword">var</span> deferred = $q.<span class="keyword">defer</span>();
+</code></pre><p>deferred对象暴露了三个方法,以及一个可以用于处理promise的promise属性。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/06/12/Angular中的promise/#more">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/angular/"> #angular </a>
+          
+            <a href="/tags/promise/"> #promise </a>
+          
+        </div>
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+      
+    </div>
+  </div>
+
+
+
+    
+      
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              <a class="post-title-link" href="/2015/06/12/每个Javascript开发者都应当知道的那些事/">
                 每个Javascript开发者都应当知道的那些事
               </a>
             
@@ -132,17 +231,28 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2015-06-08
+          发表于 2015-06-12
         </span>
 
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/技术/">技术</a>
+
+              
+              
+
+            
+          </span>
         
 
         
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/06/08/每个Javascript开发者都应当知道的那些事/#comments" >
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/08/每个Javascript开发者都应当知道的那些事/"></span>
+            <a href="/2015/06/12/每个Javascript开发者都应当知道的那些事/#comments" >
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/12/每个Javascript开发者都应当知道的那些事/"></span>
             </a>
           </span>
           
@@ -158,11 +268,11 @@
       
         
           <h3 id="原生JS获取DOM元素方法">原生JS获取DOM元素方法</h3><p>document.getElementById——通过ID查找元素的经典查询。<br>document.getElementsByClassName——通过className在DOM中查找元素。<br>document.querySelector——这是一个很好的方法。它拥有jQuery $()的所有力量，它是原生的。它将只返回它发现的第一个元素。<br>document.querySelectorAll——几乎和上面的方法一样，除了它返回多个元素，而不仅仅是第一个。<br>document.getElementsByTagName——这允许查询特定标记名的元素。想在页面或span标签中找到所有DIV元素吗？这是你想要的方法。</p>
-<h3 id="控制台命令">控制台命令</h3><p>console.log——基本的 logging ，用来记录在我的代码中发生的动作的基本消息。格式化标识符在console调用时也被支持。<br>console.dir(对象)——这个方便的方法可以在你的控制台窗口打印一个Javascript对象的内容。很方便。<br>console.group(标题)——这允许你通过一个可选的标题创建一组的控制台日志记录命令。意思你可以将类似的日志信息分组，比如当一段代码负责一个任务时。<br>console.groupCollapsed——和上述方法完全相同，除了最开始是折叠的，没有打开。<br>console.groupEnd——这允许你结束上面定义的组。<br>console.time(标签)——允许你测量一段特定的Javascript代码运行需要多长时间，以毫秒为单位。对测量可能的瓶颈方法尤其有效。<br>console.timeEnd(标签)——类似于groupEnd方法，这允许你停止计时器记录功能，同时运行时间将在控制台打印出来。<br>copy(字符串)——在Chrome和Firefox控制台有这个方法，它允许你将一个字符串的内容复制到剪贴板。打开开发工具，试试它，它有时可以派上用场。</p>
-<h3 id="处理字符串">处理字符串</h3><p>String.replace(regexp | replaceThis，replaceWith |callback)-允许你用另一个值替换一个值，甚至使用一个正则表达式。<br>String.concat(‘string1’,‘string2’,etc…)-这个方法允许你将一个或多个字符串值连接起来。<br>String.indexOf(value)-这个方法允许你找到指定值第一次出现的位置，如果没有找到返回-1。<br>String.slice(startIndex,endIndex)-这个方法做了它表达的做法。它需要一个开始索引(从零)和一个结束索引，并返回一个新的字符串块。<br>String.split(separator,limit)——这个方法将一个字符串分割成由一个或多个条目组成的数组。<br>String.substr(startIndex,length)-该方法将返回字符串中从startIndex开始到指定长度的字符。<br>String.toLowerCase-这个方法将返回调用字符串的小写。<br>String.toUpperCase-这个方法将返回调用字符串的大写。<br>String.trim-调用字符串开头和结尾的空格将被删除。</p>
-<h3 id="处理数组">处理数组</h3><p>Array.pop-删除数组中的最后一个元素并返回它<br>Array.shift-删除数组中的第一个元素并返回它<br>Array.push(val1,val2…)-在一个数组的尾部添加一个或多个条目。该方法运行后将始终返回新数组长度。你可以指定多个逗号分隔值。<br>Array.reverse-反转数组的顺序(第一个元素成为最后一个同时最后一个成为第一个，等等)。<br>Array.sort([compareFunction])—允许你通过指定一个比较函数进行数组排序，比较函数能访问数组中需要排序的每一个值。<br>Array.join(separator)-这个方法在数组中取一个或多个条目，并返回一个由分隔符连接的字符串值。如果你不指定一个分隔符，缺省值是一个逗号。<br>Array.indexOf(value)-这个方法能得到指定值第一次出现的位置，如果没有找到返回-1。</p>
-<p>还有其他处理数组的方法没有列出来，你应该在<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods" target="_blank" rel="external">这里</a>进一步阅读。有一些添加到ES6的令人兴奋的新方法没有列在这里，还有其他应用于具体用例的数组方法。</p>
-
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/06/12/每个Javascript开发者都应当知道的那些事/#more">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -200,7 +310,7 @@
           
           
             
-              <a class="post-title-link" href="/2015/05/29/使用Sketch生成Webfont/">
+              <a class="post-title-link" href="/2015/06/12/使用Sketch生成Webfont/">
                 使用Sketch生成Webfont
               </a>
             
@@ -210,17 +320,28 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2015-05-29
+          发表于 2015-06-12
         </span>
 
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/技术/">技术</a>
+
+              
+              
+
+            
+          </span>
         
 
         
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/05/29/使用Sketch生成Webfont/#comments" >
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/05/29/使用Sketch生成Webfont/"></span>
+            <a href="/2015/06/12/使用Sketch生成Webfont/#comments" >
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/12/使用Sketch生成Webfont/"></span>
             </a>
           </span>
           
@@ -235,48 +356,15 @@
 
       
         
-          <p>最近 Sketch 团队发布了命令行工具 <a href="http://bohemiancoding.com/sketch/tool/" target="_blank" rel="external">Sketch</a>，可以使用命令行导出 Artboard，本周 Tsutomu Kawamura 发布了一个从 Sketch 文件自动生成 Webfont 的小工具：<a href="https://github.com/cognitom/symbols-for-sketch">Symbols for Sketch</a>（其中用到 <a href="https://github.com/nfroidure/gulp-iconfont">gulp-iconfont</a>、<a href="https://github.com/cognitom/gulp-sketch">gulp-sketch</a>），这个小东西使得我们可以直接从 Sketch 文件中输出 font，本文主要写一下这个东西如何使用。</p>
-<p>首先你需要一台 Mac，然后需要 <a href="https://itunes.apple.com/us/app/sketch/id852320343?mt=12" target="_blank" rel="external">Sketch 3</a>，如果以上都搞定的话，还需要使用命令行安装<a href="http://bohemiancoding.com/sketch/tool/" target="_blank" rel="external">Sketch Tool</a></p>
+          <p>最近 Sketch 团队发布了命令行工具 <a href="http://bohemiancoding.com/sketch/tool/">Sketch</a>，可以使用命令行导出 Artboard，本周 Tsutomu Kawamura 发布了一个从 Sketch 文件自动生成 Webfont 的小工具：<a href="https://github.com/cognitom/symbols-for-sketch">Symbols for Sketch</a>（其中用到 <a href="https://github.com/nfroidure/gulp-iconfont">gulp-iconfont</a>、<a href="https://github.com/cognitom/gulp-sketch">gulp-sketch</a>），这个小东西使得我们可以直接从 Sketch 文件中输出 font，本文主要写一下这个东西如何使用。</p>
+<p>首先你需要一台 Mac，然后需要 <a href="https://itunes.apple.com/us/app/sketch/id852320343?mt=12">Sketch 3</a>，如果以上都搞定的话，还需要使用命令行安装<a href="http://bohemiancoding.com/sketch/tool/">Sketch Tool</a></p>
 <pre><code>curl -L        http<span class="variable">s:</span>//raw.githubusercontent.<span class="keyword">com</span>/cognitom/dotfiles/master/lib/sketchtool.<span class="keyword">sh</span> | sudo <span class="keyword">sh</span>
-</code></pre><p>然后再安装 <a href="https://itunes.apple.com/us/app/sketch/id852320343?mt=12" target="_blank" rel="external">Nodejs</a>，一路下一步，安装完成之后打开任何一个你喜欢的命令行工具执行：</p>
-<pre><code>$ sudo npm <span class="keyword">install</span> -g gulp
-</code></pre><p>安装完成之后下载<a href="https://github.com/cognitom/symbols-for-sketch/archive/master.zip">这个文件</a>，解压缩到任何一个你喜欢的目录中，然后通过命令行访问该目录，并执行命令：</p>
-<pre><code>$ npm <span class="keyword">install</span>
-</code></pre><p>执行完上面的命令之后你会看到这个目录下多了一个叫 <code>node_modules</code> 的目录，这里面安装了生成 font 必须的程序。至此所有的准备工作就已经完成了，你可以在该目录下看到两个文件：<code>symbol-font-16px.sketch</code> 和 <code>symbol-font-14px.sketch</code>，他们的区别是网格不一样，一个是 <code>16px</code> 一个是 <code>14px</code>。你可以使用这两个模板绘制你需要的 icon，每一个 Artboard 的命名就是生成后 icon 的名字，如果你使用 <code>「uF701-icon_name」</code>的格式来命名 Airboard，那 <code>font code</code> 的名字将会使用 - 之前的代码</p>
-<p>当你绘制完了所有的 icon 后，只需要在该目录下执行：</p>
-<pre><code><span class="variable">$ </span>gulp symbols
-</code></pre><p>执行成功之后会出现一个叫做 dist 的目录，该目录下存放了所有生成出的 font 和 CSS，font 会有 eot、ttf、woff 三种格式和 svg 作为 fullback。</p>
-<p>如果你希望做更高级别的订制，可以打开 gulpfile.js 来做更深入的订制。</p>
-<pre><code><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">"gulp"</span>);
-<span class="keyword">var</span> rename = <span class="built_in">require</span>(<span class="string">"gulp-rename"</span>);
-<span class="keyword">var</span> sketch = <span class="built_in">require</span>(<span class="string">"gulp-sketch"</span>);
-<span class="keyword">var</span> iconfont = <span class="built_in">require</span>(<span class="string">'gulp-iconfont'</span>);
-<span class="keyword">var</span> consolidate = <span class="built_in">require</span>(<span class="string">'gulp-consolidate'</span>);
-
-<span class="keyword">var</span> fontName = <span class="string">'symbols'</span>; <span class="comment">// 这里可以设置生成出的 font 的名字</span>
-
-gulp.task(<span class="string">'symbols'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-  gulp.src(<span class="string">"symbol-font-14px.sketch"</span>) <span class="comment">// 这里可以选择使用哪一个 Sketch 文件</span>
-  .pipe(sketch({
-    <span class="keyword">export</span>: <span class="string">'artboards'</span>,
-    formats: <span class="string">'svg'</span>
-  }))
-  .pipe(iconfont({ fontName: fontName }))
-  .on(<span class="string">'codepoints'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">codepoints</span>) </span>{
-    gulp.src(<span class="string">'css/fontawesome-style.css'</span>)
-    .pipe(consolidate(<span class="string">'lodash'</span>, {
-      glyphs: codepoints,
-      fontName: fontName,
-      fontPath: <span class="string">'../fonts/'</span>, <span class="comment">// 设置 font 存放的相对路径</span>
-      className: <span class="string">'s'</span> <span class="comment">// 设置 Class 名</span>
-    }))
-    .pipe(rename({ basename:fontName }))
-    .pipe(gulp.dest(<span class="string">'dist/css/'</span>)); <span class="comment">// 设置导出的 CSS 路径</span>
-  })
-  .pipe(gulp.dest(<span class="string">'dist/fonts/'</span>)); <span class="comment">// 设置导出的 font 路径</span>
-
-});
 </code></pre>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/06/12/使用Sketch生成Webfont/#more">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -413,21 +501,21 @@ gulp.task(<span class="string">'symbols'</span>, <span class="function"><span cl
         <div class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-count">1</span>
               <span class="site-state-item-name">分类</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
