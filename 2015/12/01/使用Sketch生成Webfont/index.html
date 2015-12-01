@@ -22,7 +22,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="Sketch," />
 
 
 
@@ -48,7 +48,7 @@
 
 
 
-  <title> Hello World // Mr. Liu's </title>
+  <title> 使用Sketch生成Webfont // Mr. Liu's </title>
 </head>
 
 <body>
@@ -136,7 +136,7 @@
           
           
             
-              Hello World
+              使用Sketch生成Webfont
             
           
         </h1>
@@ -144,17 +144,28 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2015-05-21
+          发表于 2015-12-01
         </span>
 
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/技术/">技术</a>
+
+              
+              
+
+            
+          </span>
         
 
         
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/05/21/hello-world/#comments" >
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/05/21/hello-world/"></span>
+            <a href="/2015/12/01/使用Sketch生成Webfont/#comments" >
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/12/01/使用Sketch生成Webfont/"></span>
             </a>
           </span>
           
@@ -168,31 +179,72 @@
       
 
       
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>最近 Sketch 团队发布了命令行工具 <a href="http://bohemiancoding.com/sketch/tool/" target="_blank" rel="external">Sketch</a>，可以使用命令行导出 Artboard，本周 Tsutomu Kawamura 发布了一个从 Sketch 文件自动生成 Webfont 的小工具：<a href="https://github.com/cognitom/symbols-for-sketch">Symbols for Sketch</a>（其中用到 <a href="https://github.com/nfroidure/gulp-iconfont">gulp-iconfont</a>、<a href="https://github.com/cognitom/gulp-sketch">gulp-sketch</a>），这个小东西使得我们可以直接从 Sketch 文件中输出 font，本文主要写一下这个东西如何使用。</p>
+<p>首先你需要一台 Mac，然后需要 <a href="https://itunes.apple.com/us/app/sketch/id852320343?mt=12" target="_blank" rel="external">Sketch 3</a>，如果以上都搞定的话，还需要使用命令行安装<a href="http://bohemiancoding.com/sketch/tool/" target="_blank" rel="external">Sketch Tool</a></p>
+<pre><code>curl -L        http<span class="variable">s:</span>//raw.githubusercontent.<span class="keyword">com</span>/cognitom/dotfiles/master/lib/sketchtool.<span class="keyword">sh</span> | sudo <span class="keyword">sh</span>
+</code></pre><a id="more"></a>
+<p>然后再安装 <a href="https://itunes.apple.com/us/app/sketch/id852320343?mt=12" target="_blank" rel="external">Nodejs</a>，一路下一步，安装完成之后打开任何一个你喜欢的命令行工具执行：</p>
+<pre><code>$ sudo npm <span class="keyword">install</span> -g gulp
+</code></pre><p>安装完成之后下载<a href="https://github.com/cognitom/symbols-for-sketch/archive/master.zip">这个文件</a>，解压缩到任何一个你喜欢的目录中，然后通过命令行访问该目录，并执行命令：</p>
+<pre><code>$ npm <span class="keyword">install</span>
+</code></pre><p>执行完上面的命令之后你会看到这个目录下多了一个叫 <code>node_modules</code> 的目录，这里面安装了生成 font 必须的程序。至此所有的准备工作就已经完成了，你可以在该目录下看到两个文件：<code>symbol-font-16px.sketch</code> 和 <code>symbol-font-14px.sketch</code>，他们的区别是网格不一样，一个是 <code>16px</code> 一个是 <code>14px</code>。你可以使用这两个模板绘制你需要的 icon，每一个 Artboard 的命名就是生成后 icon 的名字，如果你使用 <code>「uF701-icon_name」</code>的格式来命名 Airboard，那 <code>font code</code> 的名字将会使用 - 之前的代码</p>
+<p>当你绘制完了所有的 icon 后，只需要在该目录下执行：</p>
+<pre><code><span class="variable">$ </span>gulp symbols
+</code></pre><p>执行成功之后会出现一个叫做 dist 的目录，该目录下存放了所有生成出的 font 和 CSS，font 会有 eot、ttf、woff 三种格式和 svg 作为 fullback。</p>
+<p>如果你希望做更高级别的订制，可以打开 gulpfile.js 来做更深入的订制。</p>
+<pre><code><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">"gulp"</span>);
+<span class="keyword">var</span> rename = <span class="built_in">require</span>(<span class="string">"gulp-rename"</span>);
+<span class="keyword">var</span> sketch = <span class="built_in">require</span>(<span class="string">"gulp-sketch"</span>);
+<span class="keyword">var</span> iconfont = <span class="built_in">require</span>(<span class="string">'gulp-iconfont'</span>);
+<span class="keyword">var</span> consolidate = <span class="built_in">require</span>(<span class="string">'gulp-consolidate'</span>);
 
+<span class="keyword">var</span> fontName = <span class="string">'symbols'</span>; <span class="comment">// 这里可以设置生成出的 font 的名字</span>
+
+gulp.task(<span class="string">'symbols'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+  gulp.src(<span class="string">"symbol-font-14px.sketch"</span>) <span class="comment">// 这里可以选择使用哪一个 Sketch 文件</span>
+  .pipe(sketch({
+    <span class="keyword">export</span>: <span class="string">'artboards'</span>,
+    formats: <span class="string">'svg'</span>
+  }))
+  .pipe(iconfont({ fontName: fontName }))
+  .on(<span class="string">'codepoints'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">codepoints</span>) </span>{
+    gulp.src(<span class="string">'css/fontawesome-style.css'</span>)
+    .pipe(consolidate(<span class="string">'lodash'</span>, {
+      glyphs: codepoints,
+      fontName: fontName,
+      fontPath: <span class="string">'../fonts/'</span>, <span class="comment">// 设置 font 存放的相对路径</span>
+      className: <span class="string">'s'</span> <span class="comment">// 设置 Class 名</span>
+    }))
+    .pipe(rename({ basename:fontName }))
+    .pipe(gulp.dest(<span class="string">'dist/css/'</span>)); <span class="comment">// 设置导出的 CSS 路径</span>
+  })
+  .pipe(gulp.dest(<span class="string">'dist/fonts/'</span>)); <span class="comment">// 设置导出的 font 路径</span>
+
+});
+</code></pre>
       
     </div>
 
     <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Sketch/"> #Sketch </a>
+          
+        </div>
       
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/06/12/使用Sketch生成Webfont/">使用Sketch生成Webfont</a>
+              <a href="/2015/12/01/每个Javascript开发者都应当知道的那些事/">每个Javascript开发者都应当知道的那些事</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/01/hello-world/">Hello World</a>
             
           </div>
         </div>
@@ -258,7 +310,7 @@
         <div class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -272,7 +324,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -290,6 +342,10 @@
             
               <span class="links-of-author-item">
               <a href="http://weibo.com/LS1231" target="_blank">Weibo</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="https://plus.google.com/u/0/108080422817104814589" target="_blank">Google</a>
             </span>
             
               <span class="links-of-author-item">
@@ -318,7 +374,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick_Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create_a_new_post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run_server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate_static_files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy_to_remote_sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -546,9 +602,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'liu-song';
-      var disqus_identifier = '2015/05/21/hello-world/';
-      var disqus_title = 'Hello World';
-      var disqus_url = 'https://github.com/LS1231/2015/05/21/hello-world/';
+      var disqus_identifier = '2015/12/01/使用Sketch生成Webfont/';
+      var disqus_title = '使用Sketch生成Webfont';
+      var disqus_url = 'https://github.com/LS1231/2015/12/01/使用Sketch生成Webfont/';
 
       (function(){
         var dsq = document.createElement('script');

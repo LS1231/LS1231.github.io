@@ -138,8 +138,8 @@
           
           
             
-              <a class="post-title-link" href="/2015/06/12/Angular中的promise/">
-                Angular JS中的promise
+              <a class="post-title-link" href="/2015/12/01/javascript中的this/">
+                javascript中的this
               </a>
             
           
@@ -148,7 +148,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2015-06-12
+          发表于 2015-12-01
         </span>
 
         
@@ -168,8 +168,112 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/06/12/Angular中的promise/#comments" >
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/12/Angular中的promise/"></span>
+            <a href="/2015/12/01/javascript中的this/#comments" >
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/12/01/javascript中的this/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h2 id="this是什么？不是什么？">this是什么？不是什么？</h2><ul>
+<li>this是执行上下文（Execution Context）的一个重要属性，是一个与执行上下文相关的特殊对象。因此，它可以叫作上下文对象（也就是用来指明执行上下文是在哪个上下文中被触发的对象）。</li>
+<li>this不是变量对象（Variable Object）的一个属性，所以跟变量不同，this从不会参与到标识符解析过程。也就是说，在代码中当访问this的时候，它的值是直接从执行上下文中获取的，并不需要任何作用域链查找。this的值只在进入上下文的时候进行一次确定。</li>
+</ul>
+<h2 id="Invoke_function_as_Method">Invoke function as Method</h2><ul>
+<li>当函数作为一个对象方法来执行的时候，this的值就是该方法所属的对象。</li>
+<li>方法中的this代表方法所属的对象。</li>
+</ul>
+<h2 id="Invoke_function_as_Constructor">Invoke function as Constructor</h2><ul>
+<li>在JavaScript中，函数可以作为构造器来直接创建对象，在这种情况下，this就代表了新建的对象。</li>
+</ul>
+<h2 id="Invoke_context-less_function">Invoke context-less function</h2><ul>
+<li>对于有些没有上下文的函数，也就是说这些函数没有绑定到特定的对象上，那么这些上下文无关的函数将会被默认的绑定到global object上。</li>
+<li>函数f和匿名函数表达式在被调用的过程中并没有被关联到任何对象，所以他们的this都代表global object。</li>
+</ul>
+<h2 id="call/apply/bind改变this">call/apply/bind改变this</h2><ul>
+<li>this本身是不可变的，但是 JavaScript中提供了call/apply/bind三个函数来在函数调用时设置this的值。</li>
+</ul>
+
+        
+      
+    </div>
+
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/"> #javascript </a>
+          
+            <a href="/tags/this/"> #this </a>
+          
+        </div>
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+      
+    </div>
+  </div>
+
+
+
+    
+      
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              <a class="post-title-link" href="/2015/12/01/Angular中的promise/">
+                Angular JS中的promise
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-12-01
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/技术/">技术</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/12/01/Angular中的promise/#comments" >
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/12/01/Angular中的promise/"></span>
             </a>
           </span>
           
@@ -194,7 +298,7 @@
 <pre><code><span class="keyword">var</span> deferred = $q.<span class="keyword">defer</span>();
 </code></pre><p>deferred对象暴露了三个方法,以及一个可以用于处理promise的promise属性。</p>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/06/12/Angular中的promise/#more">
+            <a class="btn" href="/2015/12/01/Angular中的promise/#more">
               阅读全文 &raquo;
             </a>
           </div>
@@ -237,7 +341,7 @@
           
           
             
-              <a class="post-title-link" href="/2015/06/12/每个Javascript开发者都应当知道的那些事/">
+              <a class="post-title-link" href="/2015/12/01/每个Javascript开发者都应当知道的那些事/">
                 每个Javascript开发者都应当知道的那些事
               </a>
             
@@ -247,7 +351,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2015-06-12
+          发表于 2015-12-01
         </span>
 
         
@@ -267,8 +371,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/06/12/每个Javascript开发者都应当知道的那些事/#comments" >
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/12/每个Javascript开发者都应当知道的那些事/"></span>
+            <a href="/2015/12/01/每个Javascript开发者都应当知道的那些事/#comments" >
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/12/01/每个Javascript开发者都应当知道的那些事/"></span>
             </a>
           </span>
           
@@ -285,7 +389,7 @@
         
           <h3 id="原生JS获取DOM元素方法">原生JS获取DOM元素方法</h3><p>document.getElementById——通过ID查找元素的经典查询。<br>document.getElementsByClassName——通过className在DOM中查找元素。<br>document.querySelector——这是一个很好的方法。它拥有jQuery $()的所有力量，它是原生的。它将只返回它发现的第一个元素。<br>document.querySelectorAll——几乎和上面的方法一样，除了它返回多个元素，而不仅仅是第一个。<br>document.getElementsByTagName——这允许查询特定标记名的元素。想在页面或span标签中找到所有DIV元素吗？这是你想要的方法。</p>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/06/12/每个Javascript开发者都应当知道的那些事/#more">
+            <a class="btn" href="/2015/12/01/每个Javascript开发者都应当知道的那些事/#more">
               阅读全文 &raquo;
             </a>
           </div>
@@ -326,7 +430,7 @@
           
           
             
-              <a class="post-title-link" href="/2015/06/12/使用Sketch生成Webfont/">
+              <a class="post-title-link" href="/2015/12/01/使用Sketch生成Webfont/">
                 使用Sketch生成Webfont
               </a>
             
@@ -336,7 +440,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2015-06-12
+          发表于 2015-12-01
         </span>
 
         
@@ -356,8 +460,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/06/12/使用Sketch生成Webfont/#comments" >
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/12/使用Sketch生成Webfont/"></span>
+            <a href="/2015/12/01/使用Sketch生成Webfont/#comments" >
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/12/01/使用Sketch生成Webfont/"></span>
             </a>
           </span>
           
@@ -377,7 +481,7 @@
 <pre><code>curl -L        http<span class="variable">s:</span>//raw.githubusercontent.<span class="keyword">com</span>/cognitom/dotfiles/master/lib/sketchtool.<span class="keyword">sh</span> | sudo <span class="keyword">sh</span>
 </code></pre>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/06/12/使用Sketch生成Webfont/#more">
+            <a class="btn" href="/2015/12/01/使用Sketch生成Webfont/#more">
               阅读全文 &raquo;
             </a>
           </div>
@@ -418,7 +522,7 @@
           
           
             
-              <a class="post-title-link" href="/2015/05/21/hello-world/">
+              <a class="post-title-link" href="/2015/12/01/hello-world/">
                 Hello World
               </a>
             
@@ -428,7 +532,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2015-05-21
+          发表于 2015-12-01
         </span>
 
         
@@ -437,8 +541,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/05/21/hello-world/#comments" >
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/05/21/hello-world/"></span>
+            <a href="/2015/12/01/hello-world/#comments" >
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/12/01/hello-world/"></span>
             </a>
           </span>
           
@@ -517,7 +621,7 @@
         <div class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -531,7 +635,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -549,6 +653,10 @@
             
               <span class="links-of-author-item">
               <a href="http://weibo.com/LS1231" target="_blank">Weibo</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="https://plus.google.com/u/0/108080422817104814589" target="_blank">Google</a>
             </span>
             
               <span class="links-of-author-item">
