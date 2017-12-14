@@ -121,28 +121,6 @@
     
     
   <url>
-    <loc>https://github.com/LS1231/2015/Angular%E4%B8%AD%E7%9A%84promise/</loc>
-    <lastmod>2015-06-12T06:45:35.000Z</lastmod>
-    <data>
-        <display>
-        <title>Angular JS中的promise</title>
-        <pubTime>2015-06-12T06:45:35.000Z</pubTime>
-        
-        <tag>angular</tag>
-         
-        <tag>promise</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="https://github.com/LS1231/categories/%E6%8A%80%E6%9C%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://github.com/LS1231/2015/%E4%BD%BF%E7%94%A8Sketch%E7%94%9F%E6%88%90Webfont/</loc>
     <lastmod>2015-06-12T06:45:35.000Z</lastmod>
     <data>
@@ -171,6 +149,28 @@
         <pubTime>2015-06-12T06:45:35.000Z</pubTime>
         
         <tag>javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="https://github.com/LS1231/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://github.com/LS1231/2015/Angular%E4%B8%AD%E7%9A%84promise/</loc>
+    <lastmod>2015-06-12T06:45:35.000Z</lastmod>
+    <data>
+        <display>
+        <title>Angular JS中的promise</title>
+        <pubTime>2015-06-12T06:45:35.000Z</pubTime>
+        
+        <tag>angular</tag>
+         
+        <tag>promise</tag>
          
          
            
