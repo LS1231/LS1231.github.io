@@ -1,43 +1,43 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 使用Sketch生成Webfont · Mr. Liu's</title><meta name="description" content="使用Sketch生成Webfont - Liu Song"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://github.com/LS1231/atom.xml" title="Mr. Liu's"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">首页</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">归档</a></li><li class="nav-list-item"><a href="/about/" target="_self" class="nav-list-link">关于</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">使用Sketch生成Webfont</h1><div class="post-info">2015年12月1日</div><div class="post-content"><p>最近 Sketch 团队发布了命令行工具 <a href="http://bohemiancoding.com/sketch/tool/" target="_blank" rel="external">Sketch</a>，可以使用命令行导出 Artboard，本周 Tsutomu Kawamura 发布了一个从 Sketch 文件自动生成 Webfont 的小工具：<a href="https://github.com/cognitom/symbols-for-sketch">Symbols for Sketch</a>（其中用到 <a href="https://github.com/nfroidure/gulp-iconfont">gulp-iconfont</a>、<a href="https://github.com/cognitom/gulp-sketch">gulp-sketch</a>），这个小东西使得我们可以直接从 Sketch 文件中输出 font，本文主要写一下这个东西如何使用。</p>
-<p>首先你需要一台 Mac，然后需要 <a href="https://itunes.apple.com/us/app/sketch/id852320343?mt=12" target="_blank" rel="external">Sketch 3</a>，如果以上都搞定的话，还需要使用命令行安装<a href="http://bohemiancoding.com/sketch/tool/" target="_blank" rel="external">Sketch Tool</a></p>
-<pre><code>curl -L        http<span class="variable">s:</span>//raw.githubusercontent.<span class="keyword">com</span>/cognitom/dotfiles/master/lib/sketchtool.<span class="keyword">sh</span> | sudo <span class="keyword">sh</span>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 使用Sketch生成Webfont · Mr. Liu's</title><meta name="description" content="使用Sketch生成Webfont - Liu Song"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://github.com/LS1231/atom.xml" title="Mr. Liu's"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">首页</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">归档</a></li><li class="nav-list-item"><a href="/about/" target="_self" class="nav-list-link">关于</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">使用Sketch生成Webfont</h1><div class="post-info">2015年6月12日</div><div class="post-content"><p>最近 Sketch 团队发布了命令行工具 <a href="http://bohemiancoding.com/sketch/tool/" target="_blank" rel="noopener">Sketch</a>，可以使用命令行导出 Artboard，本周 Tsutomu Kawamura 发布了一个从 Sketch 文件自动生成 Webfont 的小工具：<a href="https://github.com/cognitom/symbols-for-sketch">Symbols for Sketch</a>（其中用到 <a href="https://github.com/nfroidure/gulp-iconfont">gulp-iconfont</a>、<a href="https://github.com/cognitom/gulp-sketch">gulp-sketch</a>），这个小东西使得我们可以直接从 Sketch 文件中输出 font，本文主要写一下这个东西如何使用。</p>
+<p>首先你需要一台 Mac，然后需要 <a href="https://itunes.apple.com/us/app/sketch/id852320343?mt=12" target="_blank" rel="noopener">Sketch 3</a>，如果以上都搞定的话，还需要使用命令行安装<a href="http://bohemiancoding.com/sketch/tool/" target="_blank" rel="noopener">Sketch Tool</a></p>
+<pre><code>curl -L        https://raw.githubusercontent.com/cognitom/dotfiles/master/lib/sketchtool.sh | sudo sh
 </code></pre><a id="more"></a>
-<p>然后再安装 <a href="https://itunes.apple.com/us/app/sketch/id852320343?mt=12" target="_blank" rel="external">Nodejs</a>，一路下一步，安装完成之后打开任何一个你喜欢的命令行工具执行：</p>
-<pre><code>$ sudo npm <span class="keyword">install</span> -g gulp
+<p>然后再安装 <a href="https://itunes.apple.com/us/app/sketch/id852320343?mt=12" target="_blank" rel="noopener">Nodejs</a>，一路下一步，安装完成之后打开任何一个你喜欢的命令行工具执行：</p>
+<pre><code>$ sudo npm install -g gulp
 </code></pre><p>安装完成之后下载<a href="https://github.com/cognitom/symbols-for-sketch/archive/master.zip">这个文件</a>，解压缩到任何一个你喜欢的目录中，然后通过命令行访问该目录，并执行命令：</p>
-<pre><code>$ npm <span class="keyword">install</span>
+<pre><code>$ npm install
 </code></pre><p>执行完上面的命令之后你会看到这个目录下多了一个叫 <code>node_modules</code> 的目录，这里面安装了生成 font 必须的程序。至此所有的准备工作就已经完成了，你可以在该目录下看到两个文件：<code>symbol-font-16px.sketch</code> 和 <code>symbol-font-14px.sketch</code>，他们的区别是网格不一样，一个是 <code>16px</code> 一个是 <code>14px</code>。你可以使用这两个模板绘制你需要的 icon，每一个 Artboard 的命名就是生成后 icon 的名字，如果你使用 <code>「uF701-icon_name」</code>的格式来命名 Airboard，那 <code>font code</code> 的名字将会使用 - 之前的代码</p>
 <p>当你绘制完了所有的 icon 后，只需要在该目录下执行：</p>
-<pre><code><span class="variable">$ </span>gulp symbols
+<pre><code>$ gulp symbols
 </code></pre><p>执行成功之后会出现一个叫做 dist 的目录，该目录下存放了所有生成出的 font 和 CSS，font 会有 eot、ttf、woff 三种格式和 svg 作为 fullback。</p>
 <p>如果你希望做更高级别的订制，可以打开 gulpfile.js 来做更深入的订制。</p>
-<pre><code><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">"gulp"</span>);
-<span class="keyword">var</span> rename = <span class="built_in">require</span>(<span class="string">"gulp-rename"</span>);
-<span class="keyword">var</span> sketch = <span class="built_in">require</span>(<span class="string">"gulp-sketch"</span>);
-<span class="keyword">var</span> iconfont = <span class="built_in">require</span>(<span class="string">'gulp-iconfont'</span>);
-<span class="keyword">var</span> consolidate = <span class="built_in">require</span>(<span class="string">'gulp-consolidate'</span>);
+<pre><code>var gulp = require(&quot;gulp&quot;);
+var rename = require(&quot;gulp-rename&quot;);
+var sketch = require(&quot;gulp-sketch&quot;);
+var iconfont = require(&apos;gulp-iconfont&apos;);
+var consolidate = require(&apos;gulp-consolidate&apos;);
 
-<span class="keyword">var</span> fontName = <span class="string">'symbols'</span>; <span class="comment">// 这里可以设置生成出的 font 的名字</span>
+var fontName = &apos;symbols&apos;; // 这里可以设置生成出的 font 的名字
 
-gulp.task(<span class="string">'symbols'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-  gulp.src(<span class="string">"symbol-font-14px.sketch"</span>) <span class="comment">// 这里可以选择使用哪一个 Sketch 文件</span>
+gulp.task(&apos;symbols&apos;, function(){
+  gulp.src(&quot;symbol-font-14px.sketch&quot;) // 这里可以选择使用哪一个 Sketch 文件
   .pipe(sketch({
-    <span class="keyword">export</span>: <span class="string">'artboards'</span>,
-    formats: <span class="string">'svg'</span>
+    export: &apos;artboards&apos;,
+    formats: &apos;svg&apos;
   }))
   .pipe(iconfont({ fontName: fontName }))
-  .on(<span class="string">'codepoints'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">codepoints</span>) </span>{
-    gulp.src(<span class="string">'css/fontawesome-style.css'</span>)
-    .pipe(consolidate(<span class="string">'lodash'</span>, {
+  .on(&apos;codepoints&apos;, function(codepoints) {
+    gulp.src(&apos;css/fontawesome-style.css&apos;)
+    .pipe(consolidate(&apos;lodash&apos;, {
       glyphs: codepoints,
       fontName: fontName,
-      fontPath: <span class="string">'../fonts/'</span>, <span class="comment">// 设置 font 存放的相对路径</span>
-      className: <span class="string">'s'</span> <span class="comment">// 设置 Class 名</span>
+      fontPath: &apos;../fonts/&apos;, // 设置 font 存放的相对路径
+      className: &apos;s&apos; // 设置 Class 名
     }))
     .pipe(rename({ basename:fontName }))
-    .pipe(gulp.dest(<span class="string">'dist/css/'</span>)); <span class="comment">// 设置导出的 CSS 路径</span>
+    .pipe(gulp.dest(&apos;dist/css/&apos;)); // 设置导出的 CSS 路径
   })
-  .pipe(gulp.dest(<span class="string">'dist/fonts/'</span>)); <span class="comment">// 设置导出的 font 路径</span>
+  .pipe(gulp.dest(&apos;dist/fonts/&apos;)); // 设置导出的 font 路径
 
 });
-</code></pre></div></article></div></section><footer><div class="paginator"><a href="/2015/每个Javascript开发者都应当知道的那些事/" class="prev">上一篇</a><a href="/2015/hello-world/" class="next">下一篇</a></div><div class="copyright"><p>© 2015 - 2016 <a href="https://github.com/LS1231">Liu Song</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
+</code></pre></div></article></div></section><footer><div class="paginator"><a href="/2015/每个Javascript开发者都应当知道的那些事/" class="prev">PREV</a><a href="/2015/hello-world/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2017 <a href="https://github.com/LS1231">Liu Song</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
